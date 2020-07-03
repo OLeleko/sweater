@@ -14,11 +14,19 @@
             </div>
         </div>
 
-        <#--<div><label> User Name : <input type="text" name="username"/> </label></div>-->
-        <#--<div><label> Password: <input type="password" name="password"/> </label></div>-->
+
+            <#if isRegisterForm>
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">Email:</label>
+                <div class="col-sm-6">
+                    <input type="email" name="email" class="form-control" placeholder="some@some.test" />
+                </div>
+
+             </div>
+            </#if>
+
         <input type="hidden" name="_csrf" value="${_csrf.token}" />
         <#if !isRegisterForm><a href="/registration">Add new user</a></#if>
-        <#--<div><input type="submit" value="Sign In"/></div>-->
         <button class="btn btn-primary" type="submit"><#if isRegisterForm>Create<#else>Sign In</#if></button>
     </form>
 </#macro>
