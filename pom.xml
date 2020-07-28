@@ -92,10 +92,10 @@
         </dependency>
 
         <!--flyway-->
-        <dependency>
+       <!-- <dependency>
             <groupId>org.flywaydb</groupId>
             <artifactId>flyway-core</artifactId>
-        </dependency>
+        </dependency>-->
         <dependency>
             <groupId>jakarta.validation</groupId>
             <artifactId>jakarta.validation-api</artifactId>
@@ -123,8 +123,16 @@
             <artifactId>jaxb-impl</artifactId>
             <version>2.3.0</version>
         </dependency>
-
-
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
+        </dependency>
 
 
     </dependencies>
@@ -137,11 +145,19 @@
             </plugin>
 
             <!--flyway-->
-            <plugin>
+            <!--<plugin>
                 <groupId>org.flywaydb</groupId>
                 <artifactId>flyway-maven-plugin</artifactId>
                 <version>6.5.0</version>
-            </plugin>
+                <configuration>
+                    <url>jdbc:mysql://localhost:3306/db_example?serverTimezone=Europe/Minsk </url>
+                    <user>springuser</user>
+                    <password>ThePassword</password>
+                    <locations>
+                        <location>classpath:db/migration</location>
+                    </locations>
+                </configuration>
+            </plugin>-->
         </plugins>
     </build>
 
